@@ -1,0 +1,96 @@
+/* Reset básico para que no haya márgenes raros */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hace que el contenedor ocupe exactamente el 100% de la pantalla */
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column; /* Coloca el header arriba y el resto abajo */
+    height: 100vh;
+}
+
+/* --- BARRA SUPERIOR --- */
+.top-header {
+    background-color: #2c3e50; /* Azul oscuro */
+    color: white;
+    height: 70px; /* Altura fija para el header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 40px; /* Ajusta según el tamaño de tu imagen */
+    width: auto;
+}
+
+/* --- CONTENEDOR INFERIOR --- */
+.main-container {
+    display: flex; /* Coloca el sidebar y el contenido uno al lado del otro */
+    flex: 1; /* Toma todo el alto sobrante debajo del header */
+    overflow: hidden; /* Evita que la página principal haga scroll, el scroll será interno */
+}
+
+/* --- MENÚ LATERAL --- */
+.sidebar {
+    width: 250px; /* Ancho fijo para el menú */
+    background-color: #34495e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.menu li a {
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-left: 4px solid transparent; /* Para el efecto hover */
+    transition: all 0.3s ease;
+}
+
+.menu li a:hover, .menu li a.active {
+    background-color: #2c3e50;
+    border-left: 4px solid #3498db; /* Línea azul a la izquierda al seleccionar */
+    color: #3498db;
+}
+
+/* --- CONTENIDO DERECHO --- */
+.content-area {
+    flex: 1; /* Toma todo el ancho sobrante a la derecha del menú */
+    background-color: #f4f6f9;
+    padding: 30px;
+    overflow-y: auto; /* Agrega scroll solo a esta zona si hay mucha información */
+}
+
+/* Ocultar todas las secciones por defecto */
+.content-section {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Solo mostrar la sección activa */
+.content-section.active-section {
+    display: block;
+}

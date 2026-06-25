@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestión de Inventario</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <header class="top-header">
+            <div class="logo-container">
+                <img src="resources/cartoon.jpg" alt="Logo" class="logo">
+                <h2>Gestión de Inventario</h2>
+            </div>
+            <div class="user-info">
+                <span>Administrador</span> </div>
+        </header>
+
+        <div class="main-container">
+            
+            <aside class="sidebar">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#" class="menu-btn active" data-target="inicio">Inicio</a></li>
+                        <li><a href="#" class="menu-btn" data-target="inventario">Inventario</a></li>
+                        <li><a href="#" class="menu-btn" data-target="productos">Productos</a></li>
+                        <li><a href="#" class="menu-btn" data-target="movimientos">Movimientos</a></li>                        
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="content-area">
+                
+                <section id="inicio" class="content-section active-section">
+                    <h3>Panel Principal</h3>
+                    <p>Bienvenido al sistema. Selecciona una opción en el menú de la izquierda.</p>
+                </section>
+
+                <section id="inventario" class="content-section">
+                    <h3>Gestión de Inventario</h3>
+                    <p>Aquí irá la tabla general de tu inventario.</p>
+                    </section>
+
+                <section id="productos" class="content-section">
+                    <h3>Catálogo de Productos</h3>
+                    <p>Aquí podrás agregar, editar o eliminar productos.</p>
+                </section>
+
+                <section id="movimientos" class="content-section">
+                    <h3>Entradas y Salidas</h3>
+                    <p>Registro de movimientos del inventario.</p>
+                    <p>Bienvenido al sistema. Selecciona una opción en el menú de la izquierda.</p>
+                </section>
+
+                <section id="inventario" class="content-section">
+                    <h3>Gestión de Inventario</h3>
+                    <p>Aquí irá la tabla general de tu inventario.</p>
+                    </section>
+
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
