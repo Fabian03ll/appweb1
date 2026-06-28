@@ -34,7 +34,7 @@
         
 
         <div class="welcome">
-            <h2>Bienvenido c:</h2>
+            <h2>Bienvenido c: </h2>
             <a class="btn-goback">Go back</a>
         </div>
     </div>
@@ -42,5 +42,22 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="login.js"></script>
 
+    
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('error') === 'invalid') {
+        const msg = document.createElement('p');
+        msg.textContent = '';
+        msg.textContent = 'Usuario o contraseña incorrectos';
+        msg.style.cssText = 'color:#ff4757;font-size:12px;margin-top:8px;';
+        document.querySelector('.form-signin').appendChild(msg);
+    } else if (params.get('error') === 'db') {
+        const msg = document.createElement('p');
+        msg.textContent = 'Error de conexión a la base de datos';
+        msg.style.cssText = 'color:#ff4757;font-size:12px;margin-top:8px;';
+        document.querySelector('.form-signin').appendChild(msg);
+    }
+    </script>
+    
 </body>
 </html>

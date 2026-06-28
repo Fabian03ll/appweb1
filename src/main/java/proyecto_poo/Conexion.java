@@ -21,12 +21,17 @@ public class Conexion {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
             // Armamos la nueva cadena con SQL Server 2022 y confianza de certificado
-            String cadenaConexion = "jdbc:sqlserver://" + IP_INSTANCIA 
+            /*String cadenaConexion = "jdbc:sqlserver://" + IP_INSTANCIA 
                     + ";databaseName=" + BD
                     + ";integratedSecurity=true" // Para que use tu cuenta de Windows
                     + ";encrypt=true"
-                    + ";trustServerCertificate=true;"; // El check que activamos en SSMS
-
+                    + ";trustServerCertificate=true;";*/ // El check que activamos en SSMS
+                String cadenaConexion = "jdbc:sqlserver://DESKTOP-NOL4MLB"
+                    + ";databaseName=Proyecto_POO_Gestion"
+                    + ";user=vale"
+                    + ";password=capybara"
+                    + ";encrypt=true"
+                    + ";trustServerCertificate=true";
             conexion = DriverManager.getConnection(cadenaConexion);
             System.out.println("¡Conexión exitosa a SQL Server desde la Web!");
 

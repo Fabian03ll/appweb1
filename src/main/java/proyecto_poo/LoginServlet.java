@@ -44,10 +44,12 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("rol", rs.getString("rol"));
                 
                 // Redirigir al panel principal
-                response.sendRedirect("dashboard.html");
+                response.sendRedirect("dashboard.jsp");
+                return;  // para aquí, no ejecuta nada más
             } else {
                 // Datos incorrectos: mandar de vuelta al login con un mensaje de error
                 response.sendRedirect("Login.html?error=invalid");
+                return;  // para aquí, no ejecuta nada más
             }
             
         } catch (SQLException e) {
