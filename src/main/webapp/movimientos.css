@@ -1,0 +1,449 @@
+/*==================================================
+                MÓDULO MOVIMIENTOS
+==================================================*/
+
+.movimientos-opciones{
+    margin-top:30px;
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.opcion-movimiento{
+    width:280px;
+    padding:25px;
+    border-radius:12px;
+    background:white;
+    border:2px solid #dcdcdc;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.opcion-movimiento:hover{
+    background:#00994d;
+    color:white;
+    transform:translateY(-5px);
+}
+
+.opcion-movimiento h3{
+    margin-bottom:12px;
+}
+
+.opcion-movimiento p{
+    font-size:15px;
+    line-height:22px;
+}
+
+/*========== MODAL ==========*/
+
+.modal{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index:9999;
+}
+
+.modal-contenido{
+    background:#fff;
+    width:80%;
+    max-width:900px;
+    max-height:85vh;
+    margin:30px auto;
+    padding:20px;
+    border-radius:10px;
+    position:relative;
+    overflow-y:auto;
+}
+
+#cerrarModal{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+.mensaje{
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:6px;
+    font-weight:bold;
+    display:none;
+}
+
+.mensaje.exito{
+    background:#d4edda;
+    color:#155724;
+    border:1px solid #c3e6cb;
+}
+
+.mensaje.error{
+    background:#f8d7da;
+    color:#721c24;
+    border:1px solid #f5c6cb;
+}
+
+
+/*======================
+      RESUMEN
+=======================*/
+
+.resumen-movimientos{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+.tarjeta-resumen{
+    flex:1;
+    min-width:170px;
+    background:#ffffff;
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.10);
+    border-left:5px solid #00994d;
+    transition:.3s;
+}
+
+.tarjeta-resumen:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.tarjeta-resumen h4{
+    margin-bottom:10px;
+    color:#555;
+    font-size:15px;
+}
+
+.tarjeta-resumen span{
+    font-size:28px;
+    font-weight:bold;
+    color:#00994d;
+}
+
+.ultimo-movimiento{
+    background:#f4f6f9;
+    padding:12px;
+    border-radius:8px;
+    border-left:5px solid #3498db;
+}
+
+
+/*==========================
+      FORMULARIO EN DOS COLUMNAS
+==========================*/
+
+#formMovimiento{
+    max-width:900px;
+}
+
+.fila-formulario{
+    display:flex;
+    gap:25px;
+    margin-bottom:20px;
+}
+
+.campo{
+    flex:1;
+}
+
+.campo label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#2c3e50;
+}
+
+.campo input,
+.campo select{
+
+    width:100%;
+    padding:10px 12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+    transition:.2s;
+
+}
+
+.campo input:focus,
+.campo select:focus{
+
+    outline:none;
+    border-color:#3498db;
+    box-shadow:0 0 5px rgba(52,152,219,.3);
+
+}
+
+.producto-busqueda{
+    display:flex;
+    gap:8px;
+}
+
+.producto-busqueda input{
+    flex:1;
+}
+
+#btnBuscarProducto{
+
+    width:52px;
+    height:42px;
+    border:none;
+    border-radius:6px;
+    background:#3498db;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+#btnBuscarProducto:hover{
+
+    background:#2980b9;
+
+}
+
+.boton-guardar{
+
+    display:flex;
+    align-items:flex-end;
+
+}
+
+#btnGuardar{
+
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#27ae60;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+#btnGuardar:hover{
+
+    background:#219150;
+
+}
+
+
+/*==========================
+      ENCABEZADO
+==========================*/
+
+.encabezado-movimiento{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+
+}
+
+#btnVolver{
+
+    background:white;
+    color:#2c3e50;
+    border:1px solid #dcdcdc;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+
+}
+
+#btnVolver:hover{
+
+    background:#3498db;
+    color:white;
+
+}
+
+
+input[readonly]{
+
+    background:#f5f5f5;
+
+}
+
+#lblUltimoMovimiento{
+
+    font-weight:bold;
+    color:#2c3e50;
+
+}
+
+
+/*=========================
+      BUSCAR PRODUCTO
+=========================*/
+
+.barra-busqueda{
+
+    margin:20px 0;
+
+}
+
+.barra-busqueda input{
+
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+
+}
+
+.filtros-producto{
+
+    display:flex;
+    gap:25px;
+    margin-bottom:20px;
+
+}
+
+.filtros-producto label{
+
+    font-weight:bold;
+    color:#2c3e50;
+
+}
+
+#tablaProductos{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+#tablaProductos thead{
+
+    background:#34495e;
+    color:white;
+
+}
+
+#tablaProductos th,
+#tablaProductos td{
+
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+
+}
+
+#tablaProductos tbody tr{
+
+    transition:.2s;
+
+}
+
+#tablaProductos tbody tr:hover{
+
+    background:#f4f6f9;
+
+}
+
+
+/*==========================
+      BOTÓN SELECCIONAR
+==========================*/
+
+.seleccionar{
+
+    background:#27ae60;
+    color:white;
+    border:none;
+    border-radius:6px;
+    padding:8px 14px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+
+}
+
+.seleccionar:hover{
+
+    background:#219150;
+    transform:scale(1.05);
+
+}
+
+
+/*==========================
+        STOCK
+==========================*/
+
+.stockNormal{
+
+    color:#27ae60;
+    font-weight:bold;
+    font-size:16px;
+
+}
+
+.stockBajo{
+
+    color:#f39c12;
+    font-weight:bold;
+    font-size:16px;
+
+}
+
+.stockSin{
+
+    color:#e74c3c;
+    font-weight:bold;
+    font-size:16px;
+
+}
+
+/*==========================
+      SCROLL TABLA PRODUCTOS
+==========================*/
+
+.tabla-productos{
+
+    max-height:400px;
+    overflow-y:auto;
+    border:1px solid #ddd;
+    border-radius:8px;
+
+}
+
+#tablaProductos{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+#tablaProductos thead th{
+
+    position:sticky;
+    top:0;
+    background:#34495e;
+    color:white;
+    z-index:1;
+
+}
+
+
+
+

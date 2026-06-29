@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Producto</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="content-section active-section">
+    <h2>🔍 Buscar Producto</h2>
+    <div class="barra-busqueda">
+        <input
+            type="text"
+            id="txtBuscar"
+            placeholder="Escriba el nombre del producto...">
+    </div>
+    <div class="filtros-producto">
+        <label>
+            <input type="radio" name="filtro" value="TODOS" checked>
+            Todos
+        </label>
+        <label>
+            <input type="radio" name="filtro" value="BAJO">
+            Bajo Stock
+        </label>
+        <label>
+            <input type="radio" name="filtro" value="SIN">
+            Sin Stock
+        </label>
+    </div>
+    <div class="tabla-productos">
+        <table id="tablaProductos">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Stock</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="listaProductos">
+            </tbody>
+        </table>
+    </div>
+</div>
+    
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="buscarProducto.js"></script>-->
+    
+</body>
+</html>

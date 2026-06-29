@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Movimientos</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="content-section active-section">
+    <h2>Movimientos del Inventario</h2>
+    <br>
+    <button type="button" id="btnVolver" onclick="volverMenuMovimientos()">
+        ← Volver
+    </button>
+    <br><br>
+    <label>
+        <input type="radio" name="tipo" value="TODOS" checked>
+        Todos
+    </label>
+    <label>
+        <input type="radio" name="tipo" value="ENTRADA">
+        Entradas
+    </label>
+    <label>
+        <input type="radio" name="tipo" value="SALIDA">
+        Salidas
+    </label>
+    <br><br>
+    <label>Fecha</label>
+    <input type="date" id="fecha">
+    <button id="btnBuscarFecha">
+        Buscar
+    </button>
+    <br><br>
+    <label>Producto</label>
+    <input type="text" id="txtProducto" placeholder="Buscar producto...">
+    <button id="btnTodo">
+        Mostrar Todo
+    </button>
+    <br><br>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Producto</th>
+                <th>Movimiento</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody id="tablaMovimientos">
+        </tbody>
+    </table>
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="verMovimientos.js"></script>-->
+
+</body>
+</html>

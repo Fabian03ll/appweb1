@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Gestión de Inventario</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="movimientos.css">
 </head>
 <body>
 
@@ -50,9 +51,34 @@
                 </section>
 
                 <section id="movimientos" class="content-section">
+                    <!--
                     <h3>Entradas y Salidas</h3>
                     <p>Registro de movimientos del inventario.</p>
                     <p>Bienvenido al sistema. Selecciona una opción en el menú de la izquierda.</p>
+                    -->
+                    
+                    <div id="menuMovimientos">
+                        <h2>Módulo de Movimientos</h2>
+                        <p>Seleccione una opción.</p>
+                        <div class="movimientos-opciones">
+                            <div class="opcion-movimiento"
+                                 id="btnRegistrar"
+                                 onclick="abrirMovimientos()">
+                                <h3>Registrar Movimiento</h3>
+                                <p>Registrar entradas y salidas del inventario.</p>
+                            </div>
+                            <div class="opcion-movimiento"
+                                 id="btnMostrar"
+                                 onclick="abrirVerMovimientos()">
+                                <h3>Ver Movimientos</h3>
+                                <p>Consultar todos los movimientos registrados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aquí cargaremos registrar o ver movimientos -->
+                    <div id="contenidoMovimientos"></div>
+
                 </section>
 
                 <section id="inventario" class="content-section">

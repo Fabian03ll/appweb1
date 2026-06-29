@@ -21,6 +21,11 @@ public class LoginServlet extends HttpServlet {
         String txtUser = request.getParameter("usuario"); // Revisa si tu <input> tiene name="usuario"
         String txtPass = request.getParameter("contrasena"); // Revisa si tu <input> tiene name="contrasena"
         
+        //---------------------------------------------------
+        System.out.println("Usuario recibido: " + txtUser);
+        System.out.println("Contraseña recibida: " + txtPass);
+        //---------------------------------------------------
+        
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -29,7 +34,16 @@ public class LoginServlet extends HttpServlet {
             // 2. Conectar a SQL Server usando tu clase Conexion
             conn = Conexion.getConnection();
             
+            //---------------------------------------------------
+            if (conn == null) {
+                System.out.println("ERROR: La conexión es NULL");
+            } else {
+                System.out.println("Conexión establecida correctamente");
+            }
+            //---------------------------------------------------
+            
             // 3. Consulta SQL para validar credenciales y estado activo
+            //String sql = "SELECT username, rol FROM Usuarios WHERE username = ? AND password = ?";
             String sql = "SELECT username, rol FROM Usuarios WHERE username = ? AND password = ? AND estado = 1";
             ps = conn.prepareStatement(sql);
             ps.setString(1, txtUser);
@@ -38,6 +52,10 @@ public class LoginServlet extends HttpServlet {
             rs = ps.executeQuery();
             
             if (rs.next()) {
+                //-----------------------------------
+                System.out.println("LOGIN CORRECTO");
+                //-----------------------------------
+                
                 // ¡Credenciales correctas! Creamos la sesión del usuario
                 HttpSession session = request.getSession();
                 session.setAttribute("usuario", rs.getString("username"));
@@ -46,12 +64,25 @@ public class LoginServlet extends HttpServlet {
                 // Redirigir al panel principal
                 response.sendRedirect("dashboard.html");
             } else {
+                
+                //-----------------------------------
+                System.out.println("LOGIN INCORRECTO");
+                //--------------------------------------
+                
+                
                 // Datos incorrectos: mandar de vuelta al login con un mensaje de error
                 response.sendRedirect("Login.html?error=invalid");
             }
             
         } catch (SQLException e) {
-            System.err.println("Error en el LoginServlet: " + e.getMessage());
+            
+            //System.err.println("Error en el LoginServlet: " + e.getMessage());
+            
+            //---------------------------------------------
+            System.err.println("Error en el LoginServlet:");
+            e.printStackTrace();
+            //---------------------------------------------
+            
             response.sendRedirect("Login.html?error=db");
         } finally {
             // Cerrar conexiones abiertas por seguridad
