@@ -1,3 +1,8 @@
+/* Merged dashboard.css
+   - Origenes: compañero (versión corta) + tu versión (más completa)
+   - He eliminado duplicados y conservado todas las reglas adicionales que tenías.
+*/
+
 /* Reset básico para que no haya márgenes raros */
 * {
     margin: 0;
@@ -11,6 +16,20 @@
     display: flex;
     flex-direction: column; /* Coloca el header arriba y el resto abajo */
     height: 100vh;
+}
+
+/* --- BANNER SUPERIOR (imagen encima del header azul) --- */
+.top-banner {
+    width: 100%;
+    height: 150px; /* Ajusta la altura del banner a tu gusto */
+    overflow: hidden;
+}
+
+.top-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen sin deformarla */
+    display: block;
 }
 
 /* --- BARRA SUPERIOR --- */
@@ -51,6 +70,8 @@
     color: white;
     display: flex;
     flex-direction: column;
+    /* Si el menú es muy largo, permitir scroll interno */
+    overflow-y: auto;
 }
 
 .menu {
@@ -99,6 +120,29 @@
 
 .welcome-header {
     margin-bottom: 25px;
+}
+
+/* Fila que junta el texto de bienvenida con el gif a la derecha */
+.welcome-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.welcome-row .welcome-header {
+    margin-bottom: 0;
+}
+
+.welcome-gif {
+    flex-shrink: 0;
+}
+
+.welcome-gif img {
+    height: 90px; /* Ajusta el tamaño del gif a tu gusto */
+    width: auto;
+    display: block;
 }
 
 .welcome-header h3 {
@@ -223,8 +267,11 @@
 .badge-danger { background-color: #ffebee; color: #c0392b; }
 .badge-warning { background-color: #fff3e0; color: #d35400; }
 .badge-success { background-color: #e8f5e9; color: #27ae60; }
+
 .kpi-data {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
+/* FIN de dashboard.css (fusionado, sin duplicados) */

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Movimiento</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="content-section active-section">
+    <div class="encabezado-movimiento">
+        <h2>Registrar Movimiento</h2>
+        <button type="button"
+                id="btnVolver"
+                onclick="volverMenuMovimientos()">
+            ← Volver
+        </button>
+    </div>
+    <div class="resumen-movimientos">
+        <div class="tarjeta-resumen">
+            <h4>Total Productos</h4>
+            <span id="lblTotalProductos">0</span>
+        </div>
+        <div class="tarjeta-resumen">
+            <h4>Stock Total</h4>
+            <span id="lblStockTotal">0</span>
+        </div>
+        <div class="tarjeta-resumen">
+            <h4>Entradas</h4>
+            <span id="lblEntradas">0</span>
+        </div>
+        <div class="tarjeta-resumen">
+            <h4>Salidas</h4>
+            <span id="lblSalidas">0</span>
+        </div>
+    </div>
+    <div class="ultimo-movimiento">
+        <strong>Último movimiento:</strong>
+        <span id="lblUltimoMovimiento">Sin movimientos</span>
+    </div>
+    <div id="mensajeMovimiento" class="mensaje"></div>
+    <br>
+    <form id="formMovimiento">
+        <div class="fila-formulario">
+            <div class="campo">
+                <label>Categoría</label>
+                <select id="categoria">
+                    <option>Seleccione...</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label>Producto</label>
+                <div class="producto-busqueda">
+                    <input
+                        type="text"
+                        id="producto"
+                        readonly
+                        placeholder="Seleccione un producto">
+                    <button type="button" id="btnBuscarProducto">
+                        🔍
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="fila-formulario">
+            <div class="campo">
+                <label>Stock Actual</label>
+                <input
+                    type="number"
+                    id="stock"
+                    readonly>
+            </div>
+            <div class="campo">
+                <label>Cantidad</label>
+                <input
+                    type="number"
+                    id="cantidad">
+            </div>
+        </div>
+        <div class="fila-formulario">
+            <div class="campo">
+                <label>Tipo</label>
+                <select id="tipo">
+                    <option>ENTRADA</option>
+                    <option>SALIDA</option>
+                </select>
+            </div>
+            <div class="campo boton-guardar">
+                <button type="button" id="btnGuardar">
+                    Guardar Movimiento
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+    
+    <!-- MODAL BUSCAR PRODUCTO -->
+    <div id="modalProducto" class="modal">
+        <div class="modal-contenido">
+            <span id="cerrarModal">&times;</span>
+            <div id="contenidoModal"></div>
+        </div>
+    </div>
+    
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    //<script src="movimientos.js"></script>-->
+    
+</body>
+</html>
+
+
+
