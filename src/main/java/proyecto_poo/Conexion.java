@@ -5,7 +5,52 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
+    
+    private static final String IP = "localhost";
+    private static final String PUERTO = "1433";
+    //private static final String BD = "InventarioSupermercado";
+    private static final String BD = "Proyecto_POO_Gestion";
+    private static final String USUARIO = "usersql";
+    private static final String CONTRASENA = "root2";
 
+    public static Connection getConnection() {
+
+        Connection conexion = null;
+
+        try {
+
+            // Registrar el driver JDBC
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+            String cadenaConexion =
+                    "jdbc:sqlserver://" + IP + ":" + PUERTO
+                    + ";databaseName=" + BD
+                    + ";encrypt=true"
+                    + ";trustServerCertificate=true";
+
+            conexion = DriverManager.getConnection(
+                    cadenaConexion,
+                    USUARIO,
+                    CONTRASENA
+            );
+
+            System.out.println("Conexión exitosa a SQL Server");
+
+        } catch (ClassNotFoundException e) {
+
+            System.err.println("No se encontró el Driver JDBC.");
+            e.printStackTrace();
+
+        } catch (SQLException e) {
+
+            System.err.println("Error al conectar a SQL Server.");
+            e.printStackTrace();
+
+        }
+
+        return conexion;
+    
+    /*
     // Cambiamos la ruta para apuntar a tu nueva instancia Express
     private static final String IP_INSTANCIA = "localhost\\SQLEXPRESS";
     private static final String BD = "Proyecto_POO_Gestion";
@@ -35,7 +80,7 @@ public class Conexion {
         } catch (SQLException e) {
             System.err.println("Error al conectar a la BD: " + e.getMessage());
         }
-        return conexion;
+        return conexion;*/
     }
 
     public static void inicializarBaseDatos() {

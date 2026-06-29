@@ -18,3 +18,32 @@ $(document).ready(function() {
     });
 
 });
+
+
+//----------------------------------------------------
+function abrirMovimientos() {
+    $("#menuMovimientos").hide();
+    $("#contenidoMovimientos").load("movimientos.html", function () {
+        $.getScript("movimientos.js");
+    });
+}
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+function abrirVerMovimientos() {
+    $("#menuMovimientos").hide();
+    $("#contenidoMovimientos").load("verMovimientos.html", function () {
+        $.getScript("verMovimientos.js");
+    });
+}
+//-----------------------------------------------------
+//
+//-----------------------------------------------------
+function volverMenuMovimientos() {
+
+    $("#contenidoMovimientos").empty();
+
+    $("#menuMovimientos").show();
+
+}
+//-----------------------------------------------------
