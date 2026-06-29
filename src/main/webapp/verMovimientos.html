@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ver Movimientos</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<div class="content-section active-section">
+    <div class="encabezado-movimiento">
+        <div>
+            <h2>Movimientos del Inventario</h2>
+            <p class="subtitulo">
+                Consulte el historial de entradas y salidas del inventario.
+            </p>
+        </div>
+        <button type="button" id="btnVolver" onclick="volverMenuMovimientos()">
+            ← Volver
+        </button>
+    </div>
+    <div class="tarjeta-filtros">
+    <h3>Filtros</h3>
+    <div class="grupo-radio">
+        <label>
+            <input type="radio" name="tipo" value="TODOS" checked>
+            Todos
+        </label>
+        <label>
+            <input type="radio" name="tipo" value="ENTRADA">
+            Entradas
+        </label>
+        <label>
+            <input type="radio" name="tipo" value="SALIDA">
+            Salidas
+        </label>
+    </div>
+    <div class="fila-formulario">
+        <div class="campo">
+            <label>Fecha</label>
+            <input type="date" id="fecha">
+        </div>
+        <div class="campo">
+            <label>Producto</label>
+            <input type="text" id="txtProducto" placeholder="Buscar producto...">
+        </div>
+    </div>
+    <div class="botones-filtro">
+        <button id="btnBuscarFecha">
+            Buscar
+        </button>
+        <button id="btnTodo">
+            Mostrar Todo
+        </button>
+    </div>
+    </div>
+    <h3>Historial de movimientos</h3>
+    <div class="tabla-contenedor">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Producto</th>
+                    <th>Movimiento</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="tablaMovimientos">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="verMovimientos.js"></script>-->
+
+</body>
+</html>

@@ -76,7 +76,20 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("totalItems", totalItems);
                 session.setAttribute("stockTotal", stockTotal);
                 session.setAttribute("stockCritico", stockCritico);
-                session.setAttribute("movimientosHoy", 18); // Estático por ahora
+
+                // Movimientos de HOY (antes estaba hardcodeado en 18)
+                int movimientosHoy = 0;
+                String hoy = java.time.LocalDate.now().format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                String sqlHoy = "SELECT COUNT(*) AS total FROM Movimientos WHERE fecha LIKE ?";
+                try (PreparedStatement psHoy = conn.prepareStatement(sqlHoy)) {
+                    psHoy.setString(1, hoy + "%");
+                    try (ResultSet rsHoy = psHoy.executeQuery()) {
+                        if (rsHoy.next()) {
+                            movimientosHoy = rsHoy.getInt("total");
+                        }
+                    }
+                }
+                session.setAttribute("movimientosHoy", movimientosHoy);
                 List<Producto> listaAgotarse = new ArrayList<>();
                 String sqlAgotarse = "SELECT codigo, producto, stock FROM Inventario WHERE stock <= 5 ORDER BY stock ASC";
                 try (PreparedStatement psAgot = conn.prepareStatement(sqlAgotarse); 
